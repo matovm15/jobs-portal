@@ -9,6 +9,7 @@ class Job(models.Model):
     company = models.ForeignKey('api.Company', on_delete=models.CASCADE)
     country = models.ForeignKey('api.Country', on_delete=models.CASCADE)
     deadline = models.DateTimeField(null=True, blank=True)
+    salary = models.IntegerField(null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     address = models.CharField(max_length=100, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

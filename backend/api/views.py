@@ -1,4 +1,4 @@
-from rest_framework.decorators import api_view
+from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework import generics
 
@@ -6,15 +6,16 @@ from .models import Country, JobCategory, CompanyCategory, Company, CumulativeVi
 from .serializers import CountrySerializer, JobCategorySerializer, CompanyCategorySerializer, CompanySerializer, CumulativeViateSerializer
 
 
-@api_view(["GET"])
-def api_home(request, *args, **kwargs):
-    """Jobs Api"""
+class IndexAPIView(generics.GenericAPIView):
+    permission_classes = (permissions.AllowAny,)
     data = {
-        'message': 'Welcome to the JOBS API',
-        'status': 'success',
-        'code': 200
+        'name': 'Job Search API',
+        'version': '1.0.0',
+        'author': '<kallyasmedia@gmail.com>',
     }
-    return Response(data)
+
+    def get(self, request, *args, **kwargs):
+        return Response(self.data)
 
 
 class CountryListAPIView(generics.ListAPIView):

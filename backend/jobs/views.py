@@ -1,15 +1,19 @@
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Job
 from .serializers import JobSerializer
 
 class JobDetailsAPIView(generics.RetrieveAPIView):
+    # make sure the endpoint is protected and user is under group 'company'
+    permission_classes = [IsAuthenticated]
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
 
 class JobListAPIView(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
