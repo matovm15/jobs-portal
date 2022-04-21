@@ -58,7 +58,7 @@ class LogoutAPIView(generics.GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         request.user.auth_token.delete()
-        return Response(status=204)
+        return Response({ 'message': 'Successfully logged out' })
 
 
 class CompanyLoginAPIView(generics.GenericAPIView):
