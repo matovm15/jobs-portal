@@ -51,9 +51,9 @@ const registerCompany = async (company) => {
 };
 
 
-export default {
-    loginUser,
-    loginCompany,
-    registerUser,
-    registerCompany
-};
+export const authService = {
+  loginUser,
+  loginCompany,
+  registerCompany,
+  registerUser
+}
