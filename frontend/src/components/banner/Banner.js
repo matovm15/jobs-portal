@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const Banner = () => {
   return (
     <section className="banner-section">
