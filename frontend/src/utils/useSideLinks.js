@@ -11,7 +11,7 @@ const useSideLinks = (pathname) => {
       id: "profile",
       name: "My Profile",
       icon: "la la-user-tie",
-      path: "/user/dashboard/profile",
+      path: "/user/profile",
       active: pathname === "/user/dashboard/profile" ? "active" : "",
     },
     {
