@@ -35,7 +35,7 @@ export const authSlice = createSlice({
     builder.addCase(loginUser.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
-      state.errorMessage = action.error.message;
+      state.errorMessage = action.payload;
     });
     builder.addCase(loginCompany.pending, (state, action) => {
       state.isLoading = true;
@@ -48,7 +48,7 @@ export const authSlice = createSlice({
     builder.addCase(loginCompany.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
-      state.errorMessage = action.error.message;
+      state.errorMessage = action.payload;
     });
     builder.addCase(registerUser.pending, (state, action) => {
       state.isLoading = true;
@@ -61,7 +61,7 @@ export const authSlice = createSlice({
     builder.addCase(registerUser.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
-      state.errorMessage = action.error.message;
+      state.errorMessage = action.payload;
     });
     builder.addCase(registerCompany.pending, (state, action) => {
       state.isLoading = true;
@@ -74,7 +74,7 @@ export const authSlice = createSlice({
     builder.addCase(registerCompany.rejected, (state, action) => {
       state.isLoading = false;
       state.isError = true;
-      state.errorMessage = action.error.message;
+      state.errorMessage = action.payload;
     });
   },
 });
@@ -83,7 +83,7 @@ export const loginUser = createAsyncThunk("auth/loginUser", async (payload, thun
   try {
     return await authService.loginUser(payload);
   } catch (err) {
-    return thunkAPI.rejectWithValue(err);
+    return thunkAPI.rejectWithValue(err.message);
   }
 });
 
@@ -91,7 +91,7 @@ export const loginCompany = createAsyncThunk("auth/loginCompany", async (payload
   try {
     return await authService.loginCompany(payload);
   } catch (err) {
-    return thunkAPI.rejectWithValue(err);
+    return thunkAPI.rejectWithValue(err.message);
   }
 });
 
@@ -101,7 +101,7 @@ export const registerCompany = createAsyncThunk(
     try {
       return await authService.registerCompany(payload);
     } catch (err) {
-      return thunkAPI.rejectWithValue(err);
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
@@ -110,7 +110,7 @@ export const registerUser = createAsyncThunk("auth/registerUser", async (payload
   try {
     return await authService.registerUser(payload);
   } catch (err) {
-    return thunkAPI.rejectWithValue(err);
+    return thunkAPI.rejectWithValue(err.message);
   }
 });
 
