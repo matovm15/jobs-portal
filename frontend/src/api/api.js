@@ -1,46 +1,64 @@
-
-const API_URL = process.env.REACT_APP_URL
+const API_URL = process.env.REACT_APP_API_URL;
 
 class API {
-    POST(url, data) {
-        return fetch(API_URL + url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + localStorage.getItem('access_token')
-            },
-            body: JSON.stringify(data)
-        })
-    }
+  POST(url, data) {
+    return fetch(API_URL + url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Token " + localStorage.getItem("access_token"),
+      },
+      body: JSON.stringify(data),
+    });
+  }
 
-    GET(url) {
-        return fetch(API_URL + url, {
-            headers: {
-                'Authorization': 'Token ' + localStorage.getItem('access_token')
-            }
-        })
-    }
+  GET(url) {
+    return fetch(API_URL + url, {
+      headers: {
+        Authorization: "Token " + localStorage.getItem("access_token"),
+      },
+    });
+  }
 
-    PUT(url, data) {
-        return fetch(API_URL + url, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + localStorage.getItem('access_token')
-            },
-            body: JSON.stringify(data)
-        })
-    }
+  PUT(url, data) {
+    return fetch(API_URL + url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Token " + localStorage.getItem("access_token"),
+      },
+      body: JSON.stringify(data),
+    });
+  }
 
-    DELETE(url) {
-        return fetch(API_URL + url, {
-            method: 'DELETE',
-            headers: {
-                'Authorization': 'Token ' + localStorage.getItem('access_token')
-            }
-        })
-    }
+  DELETE(url) {
+    return fetch(API_URL + url, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Token " + localStorage.getItem("access_token"),
+      },
+    });
+  }
+
+  LOGIN(url, data) {
+    return fetch(API_URL + url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  }
+
+  REGISTER(url, data) {
+    return fetch(API_URL + url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  }
 }
 
-
-export default new API()
+export default new API();
