@@ -51,9 +51,6 @@ const Profile = () => {
           </div>
         </div>
       </section>
-      <div className="copyright-text">
-        <p>&copy; {new Date().getFullYear()} Superio. All Right Reserved.</p>
-      </div>
     </LoggedInLayout>
   );
 };

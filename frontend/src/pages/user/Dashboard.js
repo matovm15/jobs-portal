@@ -2,12 +2,11 @@
 import React from "react";
 import LoggedInLayout from "../../components/layout/LoggedInLayout";
 import SideBar from "../../components/sidebar/SideBar";
-import { useSelector } from "react-redux";
-import { authSelector } from "../../features/auth/authSlice";
 import StatsCards from "../../components/cards/StatsCards";
+import LineChart from "../../charts/line.chart";
 
 const Dashboard = () => {
-  const { user } = useSelector(authSelector);
+  
   return (
     <LoggedInLayout>
       <div className="sidebar-backdrop"></div>
@@ -30,7 +29,9 @@ const Dashboard = () => {
                   <div className="widget-title">
                     <h4>Your Profile Views</h4>
                   </div>
-                  <div className="widget-content">graph goes here</div>
+                  <div className="widget-content">
+                    
+                  </div>
                 </div>
               </div>
             </div>
@@ -65,7 +66,7 @@ const Dashboard = () => {
                         <div className="inner-box">
                           <div className="content">
                             <span className="company-logo">
-                              <img src="images/resource/company-logo/1-1.png" alt="" />
+                              <img src="../images/resource/company-logo/1-1.png" alt="" />
                             </span>
                             <h4>
                               <a href="#">Software Engineer (Android), Libraries</a>
