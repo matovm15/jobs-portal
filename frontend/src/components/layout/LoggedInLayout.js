@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { authSelector } from "../../features/auth/authSlice";
 import { Link, useLocation } from "react-router-dom";
 import useLinks from "../../utils/useLinks";
 
 const LoggedInLayout = ({ children }) => {
+  const { user } = useSelector(authSelector)
   const location = useLocation();
   const navLinks = useLinks(location);
   return (
@@ -81,12 +84,12 @@ const LoggedInLayout = ({ children }) => {
                   data-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <img src="images/resource/company-6.png" alt="avatar" className="thumb" />
-                  <span className="name">My Account</span>
+                  <img src="../images/resource/company-6.png" alt="avatar" className="thumb" />
+                  <span className="name">{ user?.username }</span>
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="candidate-dashboard-profile.html">
+                    <a href="/user/profile">
                       <i className="la la-user-tie"></i>My Profile
                     </a>
                   </li>
@@ -110,7 +113,7 @@ const LoggedInLayout = ({ children }) => {
               </div>
 
               <button id="toggle-user-sidebar">
-                <img src="images/resource/company-6.png" alt="avatar" className="thumb" />
+                <img src="../images/resource/company-6.png" alt="avatar" className="thumb" />
               </button>
               <a href="#nav-mobile" className="mobile-nav-toggler navbar-trigger">
                 <span className="flaticon-menu-1"></span>
@@ -120,6 +123,9 @@ const LoggedInLayout = ({ children }) => {
         </div>
       </header>
       {children}
+      <div className="copyright-text">
+        <p>&copy; {new Date().getFullYear()} Superio. All Right Reserved.</p>
+      </div>
     </div>
   );
 };

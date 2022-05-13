@@ -27,35 +27,17 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-3 col-md-12">
           <label>Current Salary($)</label>
-          <select className="chosen-select" style={{ display: "none" }}>
+          <select>
             <option>40-70 K</option>
             <option>50-80 K</option>
             <option>60-90 K</option>
             <option>70-100 K</option>
             <option>100-150 K</option>
           </select>
-          <div
-            className="chosen-container chosen-container-single chosen-container-single-nosearch"
-            style={{ width: "100%" }}
-            title=""
-          >
-            <a className="chosen-single">
-              <span>40-70 K</span>
-              <div>
-                <b></b>
-              </div>
-            </a>
-            <div className="chosen-drop">
-              <div className="chosen-search">
-                <input type="text" autoComplete="off" readOnly />
-              </div>
-              <ul className="chosen-results"></ul>
-            </div>
-          </div>
         </div>
         <div className="form-group col-lg-3 col-md-12">
           <label>Expected Salary($)</label>
-          <select className="chosen-select" style={{ display: "none" }}>
+          <select className="chosen-select">
             <option>120-350 K</option>
             <option>40-70 K</option>
             <option>50-80 K</option>
@@ -63,24 +45,6 @@ const ProfileForm = () => {
             <option>70-100 K</option>
             <option>100-150 K</option>
           </select>
-          <div
-            className="chosen-container chosen-container-single chosen-container-single-nosearch"
-            style={{ width: "100%" }}
-            title=""
-          >
-            <a className="chosen-single">
-              <span>120-350 K</span>
-              <div>
-                <b></b>
-              </div>
-            </a>
-            <div className="chosen-drop">
-              <div className="chosen-search">
-                <input type="text" autoComplete="off" readOnly />
-              </div>
-              <ul className="chosen-results"></ul>
-            </div>
-          </div>
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Experience</label>
@@ -88,30 +52,12 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Age</label>
-          <select className="chosen-select" style={{ display: "none" }}>
+          <select className="chosen-select">
             <option>23 - 27 Years</option>
             <option>24 - 28 Years</option>
             <option>25 - 29 Years</option>
             <option>26 - 30 Years</option>
           </select>
-          <div
-            className="chosen-container chosen-container-single chosen-container-single-nosearch"
-            style={{ width: "100%" }}
-            title=""
-          >
-            <a className="chosen-single">
-              <span>23 - 27 Years</span>
-              <div>
-                <b></b>
-              </div>
-            </a>
-            <div className="chosen-drop">
-              <div className="chosen-search">
-                <input type="text" autoComplete="off" readOnly />
-              </div>
-              <ul className="chosen-results"></ul>
-            </div>
-          </div>
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Education Levels</label>
@@ -127,8 +73,6 @@ const ProfileForm = () => {
             data-placeholder="Categories"
             className="chosen-select multiple"
             multiple
-            tabIndex="-1"
-            style={{ display: "none" }}
           >
             <option value="Banking" readOnly>Banking</option>
             <option value="Digital&amp;Creative" readOnly>Digital &amp; Creative</option>
@@ -136,47 +80,13 @@ const ProfileForm = () => {
             <option value="Human Resources" readOnly>Human Resources</option>
             <option value="Management" readOnly>Management</option>
           </select>
-          <div className="chosen-container chosen-container-multi" style={{ width: "100%" }} title="">
-            <ul className="chosen-choices">
-              <li className="search-field">
-                <input
-                  type="text"
-                  value="Categories"
-                  className="default"
-                  autoComplete="off"
-                  tabIndex="4"
-                />
-              </li>
-            </ul>
-            <div className="chosen-drop">
-              <ul className="chosen-results"></ul>
-            </div>
-          </div>
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Allow In Search &amp; Listing</label>
-          <select className="chosen-select" style={{ display: "none" }}>
+          <select className="chosen-select" >
             <option>Yes</option>
             <option>No</option>
           </select>
-          <div
-            className="chosen-container chosen-container-single chosen-container-single-nosearch"
-            style={{ width: "100%" }}
-            title=""
-          >
-            <a className="chosen-single">
-              <span>Yes</span>
-              <div>
-                <b></b>
-              </div>
-            </a>
-            <div className="chosen-drop">
-              <div className="chosen-search">
-                <input type="text" autoComplete="off" readOnly />
-              </div>
-              <ul className="chosen-results"></ul>
-            </div>
-          </div>
         </div>
         <div className="form-group col-lg-12 col-md-12">
           <label>Description</label>

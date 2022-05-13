@@ -30,7 +30,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/dashboard");
+      navigate("/user/dashboard");
     }
   }, [isError, user, navigate, dispatch]);
 
@@ -81,12 +81,6 @@ const Login = () => {
 
                 <div className="form-group">
                   <div className="field-outer">
-                    <div className="input-group checkboxes square">
-                      <input type="checkbox" name="remember-me" value="checked" id="remember" />
-                      <label htmlFor="remember" className="remember">
-                        <span className="custom-checkbox"></span> Remember me
-                      </label>
-                    </div>
                     <a href="#" className="pwd">
                       Forgot password?
                     </a>

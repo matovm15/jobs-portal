@@ -70,7 +70,7 @@ const NavBar = () => {
             Upload your CV
           </a>
           <div className="btn-box">
-            <a href="login-popup.html" className="theme-btn btn-style-three call-modal">
+            <a href="/login" className="theme-btn btn-style-three call-modal">
               Login / Register
             </a>
             <a href="/jobs/add" className="theme-btn btn-style-one">
@@ -82,7 +82,7 @@ const NavBar = () => {
 
       <div className="mobile-header">
         <div className="logo">
-          <a href="index.html">
+          <a href="/">
             <img src="images/logo.svg" alt="" title="" />
           </a>
         </div>

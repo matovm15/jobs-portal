@@ -1,4 +1,4 @@
-import api from "../api/api";
+import api from "../api";
 
 const loginUser = async (user) => {
   const res = await api.LOGIN("/auth/login/", user);
