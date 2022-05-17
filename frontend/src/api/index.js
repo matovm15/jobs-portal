@@ -59,6 +59,16 @@ class API {
       body: JSON.stringify(data),
     });
   }
+
+  LOGOUT(){
+    return fetch(API_URL + "/auth/logout/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Token " + localStorage.getItem("access_token"),
+      },
+    });
+  }
 }
 
 export default new API();

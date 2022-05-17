@@ -1,6 +1,17 @@
-import React from "react";
+import { useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { authSelector } from "../../features/auth/authSlice";
 
 const AuthLayout = ({ children }) => {
+  const { user } = useSelector(authSelector)
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (user) {
+      navigate("/user/dashboard")
+    }
+  }, [user, navigate])
+
   return (
     <div className="page-wrapper mm-page mm-slideout" id="mm-0">
       <header className="main-header">
@@ -20,7 +31,7 @@ const AuthLayout = ({ children }) => {
                 <a href="/login" className="theme-btn btn-style-three call-modal">
                   Login / Register
                 </a>
-                <a href="/jobs/add" className="theme-btn btn-style-one">
+                <a href="/login?redirec=/jobs/add" className="theme-btn btn-style-one">
                   <span className="btn-title">Post a Job</span>
                 </a>
               </div>
@@ -29,7 +40,7 @@ const AuthLayout = ({ children }) => {
         </div>
         <div className="mobile-header">
           <div className="logo">
-            <a href="index.html">
+            <a href="/">
               <img src="images/logo.svg" alt="" title="" />
             </a>
           </div>

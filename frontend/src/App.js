@@ -6,6 +6,8 @@ import Dashboard from './pages/user/Dashboard';
 import Profile from './pages/user/Profile';
 import Resume from './pages/user/Resume';
 import AppliedJobs from './pages/user/AppliedJobs';
+import Logout from './pages/logout';
+import Register from './pages/register';
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
           <Route exact path='/user/profile' element={<Profile />} />
           <Route path='/user/resume' element={<Resume />} />
           <Route path='/user/applied-job' element={<AppliedJobs />} />
+          <Route path='/user/dashboard/logout' element={<Logout />} />
         </Route>
         <Route  path="/" element={<Homepage />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </Router>
   );

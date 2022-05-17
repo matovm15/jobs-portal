@@ -76,6 +76,19 @@ export const authSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     });
+    builder.addCase(logoutUser.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(logoutUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.user = null;
+    });
+    builder.addCase(logoutUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.errorMessage = action.payload;
+    });
   },
 });
 
@@ -109,6 +122,14 @@ export const registerCompany = createAsyncThunk(
 export const registerUser = createAsyncThunk("auth/registerUser", async (payload, thunkAPI) => {
   try {
     return await authService.registerUser(payload);
+  } catch (err) {
+    return thunkAPI.rejectWithValue(err.message);
+  }
+});
+
+export const logoutUser = createAsyncThunk("auth/logoutUser", async (payload, thunkAPI) => {
+  try {
+    return await authService.logoutUser(payload);
   } catch (err) {
     return thunkAPI.rejectWithValue(err.message);
   }

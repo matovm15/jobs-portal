@@ -48,9 +48,22 @@ const registerCompany = async (company) => {
   }
 };
 
+const logoutUser = async () => {
+  const res = await api.LOGOUT();
+  const data = await res.json();
+  if (data.message === "Successfully logged out") {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("user");
+    return true;
+  } else {
+    throw new Error("Something went wrong");
+  }
+};
+
 export const authService = {
   loginUser,
   loginCompany,
   registerCompany,
   registerUser,
+  logoutUser,
 };
