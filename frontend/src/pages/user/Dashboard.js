@@ -1,12 +1,14 @@
 /* eslint-disable */
 import React from "react";
+import { useSelector } from "react-redux";
+import { authSelector } from "../../features/auth/authSlice";
 import LoggedInLayout from "../../components/layout/LoggedInLayout";
 import SideBar from "../../components/sidebar/SideBar";
 import StatsCards from "../../components/cards/StatsCards";
 import LineChart from "../../charts/line.chart";
 
 const Dashboard = () => {
-  
+  const { user } = useSelector(authSelector)
   return (
     <LoggedInLayout>
       <div className="sidebar-backdrop"></div>

@@ -5,11 +5,11 @@ import { authSelector, loginUser, reset } from "../features/auth/authSlice";
 import AuthLayout from "../components/layout/AuthLayout";
 
 const Login = () => {
-  const { user, isLoading, isError, errorMessage } = useSelector(authSelector);
+  const { isLoading, isError, errorMessage } = useSelector(authSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -27,13 +27,7 @@ const Login = () => {
     }
     dispatch(loginUser(userData));
   };
-
-  useEffect(() => {
-    if (user) {
-      navigate("/user/dashboard");
-    }
-  }, [isError, user, navigate, dispatch]);
-
+  
   return (
     <AuthLayout>
       <div className="login-section">
