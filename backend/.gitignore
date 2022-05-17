@@ -1,0 +1,4 @@
+*.http
+venv/
+*.cpython
+__pycache__
