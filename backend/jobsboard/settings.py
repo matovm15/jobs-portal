@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api',
     'jobs',
     'authapp',
+    'profiles',
 ]
 
 MIDDLEWARE = [
