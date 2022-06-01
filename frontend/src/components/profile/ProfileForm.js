@@ -1,7 +1,8 @@
 /* eslint-disable */
 import React from "react";
 
-const ProfileForm = () => {
+const ProfileForm = ({ data }) => {
+  
   return (
     <form className="default-form">
       <div className="row">
@@ -11,11 +12,15 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Job Title</label>
-          <input type="text" name="name" placeholder="UI Designer" />
+          <input type="text" name="name" placeholder="UI Designer"
+          value={data?.job_title}
+          />
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Phone</label>
-          <input type="text" name="name" placeholder="0 123 456 7890" />
+          <input type="text" name="name" placeholder="0 123 456 7890"
+          value={data?.phone_number}
+          />
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Email address</label>
@@ -23,11 +28,14 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Website</label>
-          <input type="text" name="name" placeholder="www.jerome.com" />
+          <input type="text" name="name" placeholder="www.jerome.com"
+          value={data?.website}
+          />
         </div>
         <div className="form-group col-lg-3 col-md-12">
           <label>Current Salary($)</label>
           <select>
+            <option>{data.current_salary}</option>
             <option>40-70 K</option>
             <option>50-80 K</option>
             <option>60-90 K</option>
@@ -38,6 +46,7 @@ const ProfileForm = () => {
         <div className="form-group col-lg-3 col-md-12">
           <label>Expected Salary($)</label>
           <select className="chosen-select">
+            <option>{data.expected_salary}</option>
             <option>120-350 K</option>
             <option>40-70 K</option>
             <option>50-80 K</option>
@@ -48,11 +57,14 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Experience</label>
-          <input type="text" name="name" placeholder="5-10 Years" />
+          <input type="text" name="name" placeholder="5-10 Years"
+          value={data.experience}
+          />
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Age</label>
           <select className="chosen-select">
+            <option>{data.age}</option>
             <option>23 - 27 Years</option>
             <option>24 - 28 Years</option>
             <option>25 - 29 Years</option>
@@ -61,11 +73,15 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Education Levels</label>
-          <input type="text" name="name" placeholder="Certificate" />
+          <input type="text" name="name" placeholder="Certificate"
+          value={data.education}
+          />
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Languages</label>
-          <input type="text" name="name" placeholder="English, Turkish" />
+          <input type="text" name="name" placeholder="English, Turkish"
+          value={data.languages}
+          />
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <label>Categories </label>
@@ -90,7 +106,7 @@ const ProfileForm = () => {
         </div>
         <div className="form-group col-lg-12 col-md-12">
           <label>Description</label>
-          <textarea placeholder="Spent several years working on sheep on Wall Street. Had moderate success investing in Yugo's on Wall Street. Managed a small team buying and selling Pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed several new methods for working it banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer collaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present"></textarea>
+          <textarea value={data.bio} placeholder="Spent several years working on sheep on Wall Street. Had moderate success investing in Yugo's on Wall Street. Managed a small team buying and selling Pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed several new methods for working it banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer collaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present"></textarea>
         </div>
         <div className="form-group col-lg-6 col-md-12">
           <button className="theme-btn btn-style-one">Save</button>

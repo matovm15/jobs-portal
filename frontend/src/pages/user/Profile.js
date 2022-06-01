@@ -1,9 +1,20 @@
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { profileSelector, getProfile } from "../../features/profile/profileSlice";
+import { authSelector } from "../../features/auth/authSlice";
 import SideBar from "../../components/sidebar/SideBar";
 import ProfileForm from "../../components/profile/ProfileForm";
 import LoggedInLayout from "../../components/layout/LoggedInLayout";
 
 const Profile = () => {
+  const dispatch = useDispatch();
+  const { profile, isLoading, isError, errorMessage } = useSelector(profileSelector);
+  const { user } = useSelector(authSelector);
+
+  useEffect(() => {
+    dispatch(getProfile(user.id));
+  }, [dispatch, user.id]);
+
   return (
     <LoggedInLayout>
       <div className="sidebar-backdrop"></div>
@@ -13,6 +24,7 @@ const Profile = () => {
           <div className="upper-title-box">
             <h3>My Profile</h3>
             <div className="text">Ready to jump back in?</div>
+            {isError && <div style={{ color: "red"}}>{errorMessage}</div>}
           </div>
           <div className="row">
             <div className="col-lg-12">
@@ -43,7 +55,7 @@ const Profile = () => {
                         &amp; .png
                       </div>
                     </div>
-                    <ProfileForm />
+                    { !isLoading && <ProfileForm  data={profile}/> }
                   </div>
                 </div>
               </div>

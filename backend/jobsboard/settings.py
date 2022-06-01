@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&5gbb!(yu0bye9t7ln+g%g7vqt346_cfx!=iml(fi^r4@!kax1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'jobsportal.cit-class.com', 'ec2-3-94-53-252.compute-1.amazonaws.com:8000']
+ALLOWED_HOSTS = ['localhost', 'jobsportal.cit-class.com', 'ec2-3-94-53-252.compute-1.amazonaws.com:8000', 'localhost:3000']
 
 
 # Application definition
@@ -48,17 +48,19 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+    ]
 
 ROOT_URLCONF = 'jobsboard.urls'
 
