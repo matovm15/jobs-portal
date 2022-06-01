@@ -59,7 +59,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'https://jobs-portal.cit-class.com'
     ]
 
 ROOT_URLCONF = 'jobsboard.urls'
