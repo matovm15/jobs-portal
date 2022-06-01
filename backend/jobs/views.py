@@ -13,9 +13,15 @@ class JobDetailsAPIView(generics.RetrieveAPIView):
 
 
 class JobListAPIView(generics.ListAPIView):
+    # join and display all relations instead of just the foreign key
     permission_classes = [IsAuthenticated]
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+
+
+
+
+
 
 
 class JobCreateAPIView(generics.CreateAPIView):

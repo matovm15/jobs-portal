@@ -44,7 +44,7 @@ class RegisterAPIView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        print(serializer.validated_data)
+        
         # check for required fields: username, email, password, first_name, last_name
         required_fields = ['username', 'email', 'password', 'first_name', 'last_name']
         for field in required_fields:
