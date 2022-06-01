@@ -13,7 +13,7 @@ const NavBar = () => {
         <div className="nav-outer">
           <div className="logo-box">
             <div className="logo">
-              <a href="index.html">
+              <a href="/">
                 <img src="images/logo.svg" alt="" title="" />
               </a>
             </div>

@@ -1,5 +1,6 @@
+/* eslint-disable */
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useSideLinks from "../../utils/useSideLinks";
 
 const SideBar = () => {

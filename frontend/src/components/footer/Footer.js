@@ -157,9 +157,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="scroll-to-top scroll-to-target" data-target="html" style={{ display: 'block' }}>
+      <a href="#html" className="scroll-to-top scroll-to-target" data-target="html" style={{ display: 'block' }}>
         <span className="fa fa-angle-up"></span>
-      </div>
+      </a>
     </footer>
   );
 };

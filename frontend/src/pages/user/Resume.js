@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import LoggedInLayout from '../../components/layout/LoggedInLayout'
 import SideBar from '../../components/sidebar/SideBar'

@@ -8,6 +8,9 @@ import Resume from './pages/user/Resume';
 import AppliedJobs from './pages/user/AppliedJobs';
 import Logout from './pages/logout';
 import Register from './pages/register';
+import Jobs from './pages/Jobs';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path='/user/dashboard/logout' element={<Logout />} />
         </Route>
         <Route  path="/" element={<Homepage />} />
+        <Route path='/jobs' element={<Jobs />} />
+        <Route path='/about' element={<About />} />
+        <Route path='contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>

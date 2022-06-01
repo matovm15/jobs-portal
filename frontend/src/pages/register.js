@@ -1,11 +1,12 @@
+/* eslint-disable */
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { authSelector, registerUser, registerCompany } from "../features/auth/authSlice";
+import { authSelector, registerUser, registerCompany, reset } from "../features/auth/authSlice";
 import AuthLayout from "../components/layout/AuthLayout";
 
 const Register = () => {
   const dispatch = useDispatch();
-  const { isLoading, isError } = useSelector(authSelector);
+  const { isLoading, isError, errorMessage } = useSelector(authSelector);
   const [toggleCandidate, setToggleCandidate] = useState(true);
   const [toggleEmployer, setToggleEmployer] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,6 +34,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(reset())
     toggleCandidate ? dispatch(registerUser(formData)) : dispatch(registerCompany(formData));
   };
 
@@ -47,6 +49,14 @@ const Register = () => {
           <div className="login-form default-form">
             <div className="form-inner">
               <h3>Create a Free Account</h3>
+              {isError && (
+                <div className="message-box error">
+                  <p>{errorMessage}</p>
+                  <button className="close-btn">
+                    <span className="close_icon"></span>
+                  </button>
+                </div>
+              )}
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <div className="btn-box row">

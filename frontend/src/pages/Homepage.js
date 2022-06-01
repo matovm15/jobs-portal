@@ -10,7 +10,6 @@ import FeaturedJobs from "../components/featuredJobs/FeaturedJobs";
 import Testimonials from "../components/testimonials/Testimonials";
 import AboutSection from "../components/about/AboutSection";
 import CTO from "../components/cto/CTO";
-import Footer from "../components/footer/Footer";
 
 const Homepage = () => {
   const { user } = useSelector(authSelector);
@@ -29,7 +28,6 @@ const Homepage = () => {
       {/* <Testimonials /> */}
       <AboutSection />
       <CTO />
-      <Footer />
     </Layout>
   );
 };

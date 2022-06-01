@@ -32,7 +32,8 @@ const registerUser = async (user) => {
     localStorage.setItem("user", JSON.stringify(data.user));
     return data.user;
   } else {
-    throw new Error(data.data.non_field_errors[0]);
+    const error = data.data?.non_field_errors[0] || data.username[0]
+    throw new Error(error);
   }
 };
 
@@ -44,6 +45,7 @@ const registerCompany = async (company) => {
     localStorage.setItem("user", JSON.stringify(data.user));
     return data.user;
   } else {
+    // const error = data.data
     throw new Error(data.data.non_field_errors[0]);
   }
 };
@@ -51,13 +53,9 @@ const registerCompany = async (company) => {
 const logoutUser = async () => {
   const res = await api.LOGOUT();
   const data = await res.json();
-  if (data.message === "Successfully logged out") {
     localStorage.removeItem("access_token");
     localStorage.removeItem("user");
-    return true;
-  } else {
-    throw new Error("Something went wrong");
-  }
+    return data
 };
 
 export const authService = {
