@@ -1,17 +1,26 @@
 /* eslint-disable */
-import { useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { authSelector } from "../../features/auth/authSlice";
 
 const AuthLayout = ({ children }) => {
-  const { user } = useSelector(authSelector)
-  const navigate = useNavigate()
+  const { user } = useSelector(authSelector);
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const redirect = searchParams.get("redirect");
+  
   useEffect(() => {
-    if (user) {
-      navigate("/user/dashboard")
+    // if user was trying to access a restricted page, and redirected to login page, after successful login, redirect to the original page
+    // otherwise, redirect to dashboard
+    if(user) {
+      if(redirect) {
+        navigate(redirect);
+      } else {
+        navigate("/user/dashboard");
+      }
     }
-  }, [user, navigate])
+  }, [user, navigate]);
 
   return (
     <div className="page-wrapper mm-page mm-slideout" id="mm-0">
@@ -32,7 +41,7 @@ const AuthLayout = ({ children }) => {
                 <a href="/login" className="theme-btn btn-style-three call-modal">
                   Login / Register
                 </a>
-                <a href="/login?redirec=/jobs/add" className="theme-btn btn-style-one">
+                <a href="/login?redirect=/jobs/add" className="theme-btn btn-style-one">
                   <span className="btn-title">Post a Job</span>
                 </a>
               </div>
@@ -47,7 +56,7 @@ const AuthLayout = ({ children }) => {
           </div>
         </div>
       </header>
-      { children }
+      {children}
     </div>
   );
 };

@@ -66,7 +66,6 @@ const NavBar = () => {
 
         <div className="outer-box">
           <a href="candidate-dashboard-cv-manager.html" className="upload-cv">
-            {" "}
             Upload your CV
           </a>
           <div className="btn-box">
