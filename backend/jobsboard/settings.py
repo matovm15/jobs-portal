@@ -64,7 +64,7 @@ CORS_ORIGIN_WHITELIST = [
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://jobs-portal.cit-class.com'
+    'https://jobsportal.cit-class.com'
 ]
 
 ROOT_URLCONF = 'jobsboard.urls'
