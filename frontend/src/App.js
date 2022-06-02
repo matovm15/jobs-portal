@@ -11,6 +11,8 @@ import Register from './pages/register';
 import Jobs from './pages/Jobs';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Employers from './pages/Employers';
+import CDashboard from './pages/company/Dashboard';
 
 function App() {
   return (
@@ -23,9 +25,13 @@ function App() {
           <Route path='/user/applied-job' element={<AppliedJobs />} />
           <Route path='/user/dashboard/logout' element={<Logout />} />
         </Route>
+        <Route path='/company' element={<PrivateRoute />}>
+          <Route index path='/company/dashboard' element={<CDashboard />} />
+        </Route>
         <Route  path="/" element={<Homepage />} />
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/about' element={<About />} />
+        <Route path='/employers' element={<Employers />} />
         <Route path='contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />

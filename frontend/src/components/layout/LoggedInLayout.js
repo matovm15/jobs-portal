@@ -101,14 +101,14 @@ const LoggedInLayout = ({ children }) => {
         </div>
         <div className="mobile-header">
           <div className="logo">
-            <a href="index.html">
+            <a href="/">
               <img src="images/logo.svg" alt="" title="" />
             </a>
           </div>
           <div className="nav-outer clearfix">
             <div className="outer-box">
               <div className="login-box">
-                <a href="login-popup.html" className="call-modal">
+                <a href="/" className="call-modal">
                   <span className="icon-user"></span>
                 </a>
               </div>
