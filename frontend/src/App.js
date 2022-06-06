@@ -13,6 +13,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Employers from './pages/Employers';
 import CDashboard from './pages/company/Dashboard';
+import Job from './pages/Job';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         </Route>
         <Route  path="/" element={<Homepage />} />
         <Route path='/jobs' element={<Jobs />} />
+        <Route path='/jobs/:id' element={<Job />} />
         <Route path='/about' element={<About />} />
         <Route path='/employers' element={<Employers />} />
         <Route path='contact' element={<Contact />} />

@@ -65,7 +65,7 @@ const NavBar = () => {
         </div>
 
         <div className="outer-box">
-          <a href="candidate-dashboard-cv-manager.html" className="upload-cv">
+          <a href="/login?redirect=/user/cv-manager" className="upload-cv">
             Upload your CV
           </a>
           <div className="btn-box">
